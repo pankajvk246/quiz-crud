@@ -1,0 +1,26 @@
+{
+  "quiz": [
+    {
+      "id": 2,
+      "quizname": null,
+      "questionId": "4",
+      "questionName": "who captain of indian cricket team?",
+      "option1": "me",
+      "option2": "you",
+      "option3": "lavish",
+      "option4": "kohli",
+      "correct": true
+    },
+    {
+      "id": 1,
+      "quizname": null,
+      "questionId": null,
+      "questionName": "who cm of himachal?",
+      "option1": "tu ",
+      "option2": "mein",
+      "option3": "vo",
+      "option4": "koi bhi nahin",
+      "correct": null
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+
+  <div class="container col-sm-7">
+    <h2 class="text-center">Quiz Details</h2>
+
+     <form [formGroup]="formValue">
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">
+          <h4>Quiz Name</h4>
+        </label>
+        <input type="text" formControlName="quizname" class="form-control" id="exampleInputPassword1">
+      </div>
+
+
+
+    <button (click)="clickAddUser()" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+      class="btn btn-success">Add
+      Question</button>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary">Close</button>
+
+        <button type="button" (click)="postQuizDetail()"  class="btn btn-primary">Save</button>
+      </div>
+    </form>
+
+    <table class="table mt-3">
+      <thead>
+        <tr>
+          <th scope="col">Question ID</th>
+          <th scope="col">Question Name</th>
+          <th scope="col">Action</th>
+
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of quizData">
+          <td>{{row.id}}</td>
+          <td>{{row.questionName}}</td>
+
+          <td>
+            <button (click)="onEdit(row)" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+              class="btn btn-outline-success">Edit</button>
+            <button (click)="deleteUser(row)" class=" btn btn-outline-danger mx-2">Delete</button>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Question </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+         <form [formGroup]="formValue">
+           <div class="mb-3">
+             <label for="exampleInputPassword" class="form-label"> <b>Question Id</b></label>
+             <input type="text" formControlName="questionId" class="form-control" id="exampleInputPassword1">
+           </div>
+
+           <div class="mb-3">
+             <label for="exampleInputPassword" class="form-label"> <b>Question Name</b></label>
+             <input type="text" formControlName="questionName" class="form-control" id="exampleInputPassword1">
+           </div>
+           <button class="btn btn-success" >Add option</button>
+           <h5 class="modal-title">Options </h5>
+           <div >
+             <div>
+               <label for="exampleInputPassword" class="form-label">option1</label>
+               <input type="text" formControlName="option1" class="form-control" id="exampleInputPassword1">
+               <div class="form-check">
+                 <input class="form-check-input" formControlName="correct" type="checkbox" value=""
+                   id="flexCheckDefault">
+               </div>
+             </div>
+
+              <div>
+                <label for="exampleInputPassword" class="form-label">option2</label>
+                <input type="text" formControlName="option2" class="form-control" id="exampleInputPassword1">
+                <div class="form-check">
+                  <input class="form-check-input" formControlName="correct" type="checkbox" value=""
+                    id="flexCheckDefault">
+                </div>
+
+              </div>
+
+               <div>
+                 <label for="exampleInputPassword" class="form-label">option3</label>
+                 <input type="text" formControlName="option3" class="form-control" id="exampleInputPassword1">
+                 <div class="form-check">
+                   <input class="form-check-input" formControlName="correct" type="checkbox" value=""
+                     id="flexCheckDefault">
+                 </div>
+               </div>
+
+                <div>
+                  <label for="exampleInputPassword" class="form-label">option4</label>
+                  <input type="text" formControlName="option4" class="form-control" id="exampleInputPassword1">
+                  <div class="form-check">
+                    <input class="form-check-input" formControlName="correct" type="checkbox" value=""
+                      id="flexCheckDefault">
+                  </div>
+                </div>
+
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+             <button *ngIf="showAdd"  type="button" class="btn btn-primary"
+               data-bs-dismiss="modal">Save
+               changes</button>
+               <button *ngIf="showUpdate" type="button" (click)="updateQuizDetail()"
+                 class="btn btn-primary" data-bs-dismiss="modal">Update</button>
+           </div>
+
+
+
+         </form>
+
+      </div>
+
+    </div>
+  </div>
+</div>

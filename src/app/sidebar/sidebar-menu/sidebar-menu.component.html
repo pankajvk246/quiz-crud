@@ -1,0 +1,35 @@
+<div class="d-flex flex-column  flex-shrink-0 p-3 bg-light" style="width: 229px;height:100vh">
+  <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+    <svg class="bi me-2" width="40" height="88">
+      <use xlink:href="#bootstrap"></use>
+    </svg>
+    <h1 class="fs-4">Quiz Crud</h1>
+  </a>
+  <hr>
+  <div class="nav nav-pills flex-column mb-auto d-flex justify-content-between">
+    <li class="nav-item">
+      <a href="#" class="nav-link link-Success">
+        <svg class="bi me-2" width="16" height="20">
+          <use xlink:href="#home"></use>
+        </svg>
+         <a [routerLink]="'/manage-users'"> <button class="btn btn-primary">Manage Users</button></a>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="nav-link link-Success">
+        <svg class="bi me-2" width="16" height="20">
+          <use xlink:href="#speedometer2"></use>
+        </svg>
+      <a [routerLink]="'/manage-quiz'"> <button class="btn btn-primary">Manage Quiz</button></a>
+      </a>
+    </li>
+    <li>
+      <a href="#" class="nav-link link-Success">
+        <svg class="bi me-2" width="16" height="100">
+          <use xlink:href="#table"></use>
+        </svg>
+       <a [routerLink]="''"> <button class="btn btn-primary">Report</button></a>
+      </a>
+    </li>
+
+  </div>

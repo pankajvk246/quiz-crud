@@ -1,0 +1,23 @@
+<div class="container">
+  <h1 class="displaly-5 fw-bold">Manage Users</h1>
+  <p class="col-md-8 fs-4">this quiz containes 10 question</p>
+  <h4>Rules</h4>
+  <ol>
+    <li>correct question will give you 10 points</li>
+    <li>incorrect  will have  -10</li>
+    <li>you will have 10 sec to answer</li>
+    <li>refreshing the page will  reset the quiz</li>
+  </ol>
+  <h1 class="text-center">All the best</h1>
+  <div class="name col-md-4 my-3">
+     <label  for="">Enter your ID</label>
+     <input #name type="text" class="form-control">
+     <!-- <label for="">Id</label>
+     <input type="number" class="form-control"> -->
+  </div>
+
+  <button class=" btn btn-primary btn-lg" (click)="startQuiz()">
+    <a [ngStyle]="{'color': 'white' ,'text-decoration': 'none' }"
+      routerLink="/question"
+      routerLinkActive="active"> start the quiz</a></button>
+</div>
